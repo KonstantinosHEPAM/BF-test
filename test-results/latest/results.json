@@ -1,0 +1,352 @@
+[
+  {
+    "step": 1,
+    "description": "Homepage load",
+    "action": "click",
+    "selector": "#app-search-results-global > div:nth-child(1) > div > div.search__button",
+    "inputs": {},
+    "expectedEvents": [
+      "page_view"
+    ],
+    "foundEvents": [
+      "page_view"
+    ],
+    "missingEvents": [],
+    "screenshot": "screenshots/1_Homepage_load.png",
+    "errors": [
+      "Action error: Waiting for selector `#app-search-results-global > div:nth-child(1) > div > div.search__button` failed"
+    ]
+  },
+  {
+    "step": 2,
+    "description": "Find your Cruise page load",
+    "action": "click",
+    "selector": "#app-search-results-global > div:nth-child(1) > section.results-wrapper > div:nth-child(1) > div.cruise-card-info > section.card-info_inner > div.price-section > div.price-section__dates > button > span",
+    "inputs": {},
+    "expectedEvents": [
+      "page_view",
+      "view_item_list"
+    ],
+    "foundEvents": [
+      "page_view"
+    ],
+    "missingEvents": [
+      "view_item_list"
+    ],
+    "screenshot": "screenshots/2_Find_your_Cruise_page_load.png",
+    "errors": [
+      "Action error: Waiting for selector `#app-search-results-global > div:nth-child(1) > section.results-wrapper > div:nth-child(1) > div.cruise-card-info > section.card-info_inner > div.price-section > div.price-section__dates > button > span` failed"
+    ]
+  },
+  {
+    "step": 3,
+    "description": "Select Item",
+    "action": "click",
+    "selector": "#dates-view-wrapper_UTME > div.cruise-card-wrapper__dates > div:nth-child(3) > div > select element",
+    "inputs": {},
+    "expectedEvents": [
+      "select_item",
+      "view_item"
+    ],
+    "foundEvents": [],
+    "missingEvents": [
+      "select_item",
+      "view_item"
+    ],
+    "screenshot": "screenshots/3_Select_Item.png",
+    "errors": [
+      "Action error: Waiting for selector `#dates-view-wrapper_UTME > div.cruise-card-wrapper__dates > div:nth-child(3) > div > select element` failed"
+    ]
+  },
+  {
+    "step": 4,
+    "description": "Begin Checkout page load",
+    "action": "click",
+    "selector": "#pricing > section > div > div.wrapper-slide.hooper-slide.is-current > div > div.section-cabin-types__cabin-type > div.cabin-type__content-wrapper > div:nth-child(1) > div > div:nth-child(1) > button",
+    "inputs": {},
+    "expectedEvents": [
+      {
+        "event": "page_view"
+      },
+      {
+        "event": "begin_checkout",
+        "step_name": "pricing",
+        "step_number": "1"
+      }
+    ],
+    "foundEvents": [
+      {
+        "event": "page_view"
+      }
+    ],
+    "missingEvents": [
+      {
+        "event": "begin_checkout",
+        "step_name": "pricing",
+        "step_number": "1"
+      }
+    ],
+    "screenshot": "screenshots/4_Begin_Checkout_page_load.png",
+    "errors": [
+      "Action error: Waiting for selector `#pricing > section > div > div.wrapper-slide.hooper-slide.is-current > div > div.section-cabin-types__cabin-type > div.cabin-type__content-wrapper > div:nth-child(1) > div > div:nth-child(1) > button` failed"
+    ]
+  },
+  {
+    "step": 5,
+    "description": "Checkout Progress 2 page load",
+    "action": "click",
+    "selector": "#op-row > section > div > div.cabins-slider > div > ul.slide.hooper-slide.is-active.is-current > div > div.position-relative > button",
+    "inputs": {},
+    "expectedEvents": [
+      {
+        "event": "page_view"
+      },
+      {
+        "event": "checkout_progress",
+        "step_name": "cabin",
+        "step_number": "2"
+      }
+    ],
+    "foundEvents": [
+      {
+        "event": "page_view"
+      }
+    ],
+    "missingEvents": [
+      {
+        "event": "checkout_progress",
+        "step_name": "cabin",
+        "step_number": "2"
+      }
+    ],
+    "screenshot": "screenshots/5_Checkout_Progress_2_page_load.png",
+    "errors": [
+      "Action error: Waiting for selector `#op-row > section > div > div.cabins-slider > div > ul.slide.hooper-slide.is-active.is-current > div > div.position-relative > button` failed"
+    ]
+  },
+  {
+    "step": 6,
+    "description": "Checkout Progress 3 page load",
+    "action": "click",
+    "selector": "#op-row > section > div > div.experience-slider > div > ul.slide.hooper-slide.is-active.is-current > div > div.position-relative > button",
+    "inputs": {},
+    "expectedEvents": [
+      {
+        "event": "page_view"
+      },
+      {
+        "event": "checkout_progress",
+        "step_name": "experience",
+        "step_number": "3"
+      }
+    ],
+    "foundEvents": [
+      {
+        "event": "page_view"
+      }
+    ],
+    "missingEvents": [
+      {
+        "event": "checkout_progress",
+        "step_name": "experience",
+        "step_number": "3"
+      }
+    ],
+    "screenshot": "screenshots/6_Checkout_Progress_3_page_load.png",
+    "errors": [
+      "Action error: Waiting for selector `#op-row > section > div > div.experience-slider > div > ul.slide.hooper-slide.is-active.is-current > div > div.position-relative > button` failed"
+    ]
+  },
+  {
+    "step": 7,
+    "description": "Add Shipping Info page load",
+    "action": "fill",
+    "selector": "",
+    "inputs": {
+      "#passenger1_name": "Sakis",
+      "#passenger1_surname": "Rouvas",
+      "#passenger1_dob": "11/11/1991",
+      "#passenger1_gender": "Male",
+      "#passenger1_country": "Italy",
+      "#passenger1_email": "sakis.rouvas@yopmail.com",
+      "#passenger1_confirm_email": "sakis.rouvas@yopmail.com",
+      "#passenger1_phone": "+3900000000",
+      "#passenger2_name": "A",
+      "#passenger2_surname": "Rouvas",
+      "#passenger2_dob": "11/11/1991",
+      "#passenger2_gender": "Male",
+      "#passenger2_country": "Italy",
+      "#passenger1_document_type": "Card",
+      "#passenger1_card_number": "A1",
+      "#passenger1_card_date": "11/11/2026",
+      "#passenger2_document_type": "Card",
+      "#passenger2_card_number": "A1",
+      "#passenger2_card_date": "11/11/2026",
+      "#contact_name": "A",
+      "#contact_phone": "+3900000000"
+    },
+    "expectedEvents": [
+      {
+        "event": "page_view"
+      },
+      {
+        "event": "add_shipping_info",
+        "step_name": "passengers-data",
+        "step_number": "7"
+      }
+    ],
+    "foundEvents": [
+      {
+        "event": "page_view"
+      }
+    ],
+    "missingEvents": [
+      {
+        "event": "add_shipping_info",
+        "step_name": "passengers-data",
+        "step_number": "7"
+      }
+    ],
+    "screenshot": "screenshots/7_Add_Shipping_Info_page_load.png",
+    "errors": [
+      "Action error: Waiting for selector `#passenger1_name` failed"
+    ]
+  },
+  {
+    "step": 8,
+    "description": "Checkout Progress 11 page load",
+    "action": "click",
+    "selector": "#op-row > section > div > a.button.btn.btn-next",
+    "inputs": {},
+    "expectedEvents": [
+      {
+        "event": "page_view"
+      },
+      {
+        "event": "checkout_progress",
+        "step_name": "insurance",
+        "step_number": "11"
+      }
+    ],
+    "foundEvents": [
+      {
+        "event": "page_view"
+      }
+    ],
+    "missingEvents": [
+      {
+        "event": "checkout_progress",
+        "step_name": "insurance",
+        "step_number": "11"
+      }
+    ],
+    "screenshot": "screenshots/8_Checkout_Progress_11_page_load.png",
+    "errors": [
+      "Action error: Waiting for selector `#op-row > section > div > a.button.btn.btn-next` failed"
+    ]
+  },
+  {
+    "step": 9,
+    "description": "Checkout Progress 12 page load",
+    "action": "click",
+    "selector": "#op-row > section > div > a.button.btn.btn-next",
+    "inputs": {},
+    "expectedEvents": [
+      {
+        "event": "page_view"
+      },
+      {
+        "event": "checkout_progress",
+        "step_name": "checkout",
+        "step_number": "12"
+      }
+    ],
+    "foundEvents": [
+      {
+        "event": "page_view"
+      }
+    ],
+    "missingEvents": [
+      {
+        "event": "checkout_progress",
+        "step_name": "checkout",
+        "step_number": "12"
+      }
+    ],
+    "screenshot": "screenshots/9_Checkout_Progress_12_page_load.png",
+    "errors": [
+      "Action error: Waiting for selector `#op-row > section > div > a.button.btn.btn-next` failed"
+    ]
+  },
+  {
+    "step": 10,
+    "description": "Add Payment popup opened",
+    "action": "payment",
+    "selector": "#pay-btn",
+    "inputs": {
+      "#card_number": "4111 1111 1111 1111",
+      "#expiration": "06/28",
+      "#cvv": "123"
+    },
+    "expectedEvents": [
+      {
+        "event": "add_payment_opened",
+        "step_name": "add_payment_info",
+        "step_number": "12"
+      },
+      {
+        "event": "add_payment_info",
+        "step_name": "add_payment_info",
+        "step_number": "12"
+      }
+    ],
+    "foundEvents": [],
+    "missingEvents": [
+      {
+        "event": "add_payment_opened",
+        "step_name": "add_payment_info",
+        "step_number": "12"
+      },
+      {
+        "event": "add_payment_info",
+        "step_name": "add_payment_info",
+        "step_number": "12"
+      }
+    ],
+    "screenshot": "screenshots/10_Add_Payment_popup_opened.png",
+    "errors": [
+      "Action error: Waiting for selector `#card_number` failed"
+    ]
+  },
+  {
+    "step": 11,
+    "description": "Purchase",
+    "action": "",
+    "selector": "",
+    "inputs": {},
+    "expectedEvents": [
+      {
+        "event": "page_view"
+      },
+      {
+        "event": "purchase",
+        "step_name": "greeting",
+        "step_number": "13"
+      }
+    ],
+    "foundEvents": [
+      {
+        "event": "page_view"
+      }
+    ],
+    "missingEvents": [
+      {
+        "event": "purchase",
+        "step_name": "greeting",
+        "step_number": "13"
+      }
+    ],
+    "screenshot": "screenshots/11_Purchase.png",
+    "errors": []
+  }
+]
