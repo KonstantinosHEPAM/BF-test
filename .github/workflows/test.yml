@@ -1,17 +1,20 @@
 name: Booking Flow Test
 
 on:
-  workflow_dispatch:  # Allows you to run it manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   booking-flow:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
@@ -30,14 +33,15 @@ jobs:
             results.csv
             screenshots/
 
-- name: Commit test results to repo
-  run: |
-    git config --global user.name "github-actions"
-    git config --global user.email "github-actions@github.com"
-    git pull
-    mkdir -p test-results/latest
-    cp results.json test-results/latest/
-    cp results.csv test-results/latest/
-    git add test-results/latest/*
-    git commit -m "Add latest test results [skip ci]" || echo "No changes to commit"
-    git push
+      - name: Commit test results to repository
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull
+          mkdir -p test-results/latest
+          cp results.json test-results/latest/
+          cp results.csv test-results/latest/
+          cp -r screenshots test-results/latest/
+          git add test-results/latest/*
+          git commit -m "Update latest test results [skip ci]" || echo "No changes to commit"
+          git push
