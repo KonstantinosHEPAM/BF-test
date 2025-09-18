@@ -77,7 +77,12 @@ const { parse } = require('json2csv');
     }
 
     // Wait for possible event triggers
-    await page.waitForTimeout(step.waitAfter || 2000);
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Usage:
+await wait(step.waitAfter || 2000);
 
     // Take screenshot
     await takeScreenshot(i, step.description);
