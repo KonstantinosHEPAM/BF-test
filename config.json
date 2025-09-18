@@ -2,7 +2,7 @@
   "steps": [
     {
       "description": "Homepage load",
-      "url": "https://uatcm-t.msccruises.com/",
+      "url": "https://www.msccrociere.it/",
       "action": "click",
       "selector": "#app-search-results-global > div:nth-child(1) > div > div.search__button",
       "expectedEvents": ["page_view"]
